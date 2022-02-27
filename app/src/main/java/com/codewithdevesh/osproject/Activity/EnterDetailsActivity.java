@@ -25,9 +25,11 @@ public class EnterDetailsActivity extends AppCompatActivity {
                 String pageInputs = binding.etPageInput.getEditText().getText().toString();
 
 
-                if(frame.isEmpty() || pageInputs.isEmpty()){
+                if(checkFrame(frame) || checkPage(pageInputs)){
                     Snackbar snackbar = Snackbar.make(binding.layout,"Please Enter the Details",Snackbar.LENGTH_SHORT);
                     snackbar.show();
+                    binding.ll.setVisibility(View.GONE);
+                    return;
                 }else {
                     binding.ll.setVisibility(View.VISIBLE);
 
@@ -41,5 +43,30 @@ public class EnterDetailsActivity extends AppCompatActivity {
                finish();
             }
         });
+    }
+    private boolean checkFrame(String s){
+        if(s.isEmpty()){
+            binding.inputFrames.setError("Enter Details");
+            binding.inputFrames.setErrorEnabled(true);
+            return true;
+
+        }else{
+            binding.inputFrames.setError(null);
+            binding.inputFrames.setErrorEnabled(false);
+            return false;
+        }
+    }
+
+    private boolean checkPage(String s){
+        if(s.isEmpty()){
+            binding.etPageInput.setError("Enter Details");
+            binding.etPageInput.setErrorEnabled(true);
+            return true;
+
+        }else{
+            binding.etPageInput.setError(null);
+            binding.etPageInput.setErrorEnabled(false);
+            return false;
+        }
     }
 }
