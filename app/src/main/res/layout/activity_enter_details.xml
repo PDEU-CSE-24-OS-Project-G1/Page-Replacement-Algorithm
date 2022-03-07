@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Optimal Algorithm"
+            android:fontFamily="@font/ubuntu_b"
             android:layout_gravity="center"
             android:gravity="center"
             android:textSize="20sp"
@@ -49,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:fontFamily="@font/ubuntu_m"
             android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
+            android:fontFamily="@font/ubuntu_m"
             android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,6 +90,7 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:text="Clear"
+        android:fontFamily="@font/ubuntu_m"
         android:layout_marginEnd="15dp"
         android:textColor="@color/black"/>
 
@@ -96,6 +100,7 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:text="Random"
+        android:fontFamily="@font/ubuntu_m"
         android:layout_marginStart="15dp"
         android:textColor="@color/black"/>
 
@@ -119,6 +124,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
+            android:fontFamily="@font/ubuntu_m"
             android:text="Calculate"
             android:textStyle="bold"
             android:background="@drawable/round_button"/>
@@ -150,6 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Input"
+                    android:fontFamily="@font/ubuntu_m"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:textSize="22sp"
@@ -160,6 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Input"
+                    android:fontFamily="@font/ubuntu_m"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:textSize="20sp"
@@ -191,9 +199,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Page Faults"
+                        android:fontFamily="@font/ubuntu_m"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
 
@@ -204,6 +213,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:text="Input"
+                        android:fontFamily="@font/ubuntu_m"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -226,9 +236,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Page Hits"
+                        android:fontFamily="@font/ubuntu_m"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
                     <TextView
@@ -236,6 +247,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Input"
+                        android:fontFamily="@font/ubuntu_m"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:textSize="20sp"
@@ -272,7 +284,8 @@
                         android:text="Fault Ratio"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/ubuntu_m"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
                     <TextView
@@ -280,6 +293,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Input"
+                        android:fontFamily="@font/ubuntu_m"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:textSize="20sp"
@@ -304,9 +318,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hit Ratio"
+                        android:fontFamily="@font/ubuntu_m"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
                     <TextView
@@ -314,6 +329,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Input"
+                        android:fontFamily="@font/ubuntu_m"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:textSize="20sp"

@@ -24,6 +24,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="About Us"
+                    android:fontFamily="@font/ubuntu_b"
                     android:layout_gravity="center"
                     android:textSize="20sp"
                     android:textColor="@color/black"
@@ -105,6 +106,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Devesh Parmar"
+                                android:fontFamily="@font/ubuntu_m"
                                 android:textColor="@color/black"
                                 android:layout_gravity="center"
                                 android:textSize="20sp"
@@ -144,6 +146,7 @@
                                 android:textColor="@color/black"
                                 android:layout_gravity="center"
                                 android:textSize="20sp"
+                                android:fontFamily="@font/ubuntu_m"
                                 android:layout_margin="10dp"
                                 android:textStyle="bold"/>
                         </LinearLayout>
@@ -193,6 +196,7 @@
                                 android:layout_gravity="center"
                                 android:layout_margin="10dp"
                                 android:text="Harsh Katariya"
+                                android:fontFamily="@font/ubuntu_m"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -232,6 +236,7 @@
                                 android:layout_gravity="center"
                                 android:layout_margin="10dp"
                                 android:text="Arpit Dobariya"
+                                android:fontFamily="@font/ubuntu_m"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -271,6 +276,7 @@
                             android:textColor="@color/black"
                             android:layout_gravity="center"
                             android:textSize="20sp"
+                            android:fontFamily="@font/ubuntu_m"
                             android:layout_margin="10dp"
                             android:textStyle="bold"/>
                     </LinearLayout>
