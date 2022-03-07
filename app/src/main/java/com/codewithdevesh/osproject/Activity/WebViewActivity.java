@@ -28,6 +28,7 @@ public class WebViewActivity extends AppCompatActivity {
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         binding.webView.loadUrl(url);
+        binding.tvTitle.setText(title);
         binding.tb.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

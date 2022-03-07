@@ -29,7 +29,9 @@ public class AlgorithmFragment extends Fragment {
         binding.cvFifo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), EnterDetailsActivity.class));
+                startActivity(new Intent(getActivity(), EnterDetailsActivity.class)
+                .putExtra("type","fifo")
+                .putExtra("title","FIFO Algorithm"));
             }
         });
 
@@ -37,14 +39,18 @@ public class AlgorithmFragment extends Fragment {
         binding.cvOpt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), EnterDetailsActivity.class));
+                startActivity(new Intent(getActivity(), EnterDetailsActivity.class)
+                .putExtra("type","optimal")
+                .putExtra("title","Optimal Algorithm"));
             }
         });
 
         binding.cvLru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), EnterDetailsActivity.class));
+                startActivity(new Intent(getActivity(), EnterDetailsActivity.class)
+                .putExtra("type","lru")
+                .putExtra("title","LRU Algorithm"));
             }
         });
         return binding.getRoot();

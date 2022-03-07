@@ -1,4 +1,4 @@
-package com.codewithdevesh.osproject.Activity.Adapter;
+package com.codewithdevesh.osproject.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.codewithdevesh.osproject.Activity.WebViewActivity;
 import com.codewithdevesh.osproject.Models.TheoryModel;
 import com.codewithdevesh.osproject.R;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class TheoryAdapter extends RecyclerView.Adapter<TheoryAdapter.ViewHolder
             @Override
             public void onClick(View view) {
                 context.startActivity(new Intent(context, WebViewActivity.class)
-                .putExtra("title",model.getTopic())
+                .putExtra("title",model.getSource())
                 .putExtra("link",model.getLink()));
             }
         });
@@ -64,7 +65,7 @@ public class TheoryAdapter extends RecyclerView.Adapter<TheoryAdapter.ViewHolder
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        CircleImageView imageView;
+       CircularImageView imageView;
         TextView topic,website;
         LinearLayout layout;
         public ViewHolder(@NonNull View itemView) {

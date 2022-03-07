@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradient2"
     tools:context=".Fragments.ProfileFragment">
 
@@ -37,6 +37,39 @@
                 android:layout_gravity="center"
                 android:gravity="center">
 
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/developers"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    app:cardBackgroundColor="@color/light_background"-->
+<!--                    android:focusable="true"-->
+<!--                    android:foreground="?android:selectableItemBackground"-->
+<!--                    android:clickable="true"-->
+<!--                    android:layout_margin="15dp"-->
+<!--                    app:cardCornerRadius="15dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:gravity="center"-->
+<!--                        android:background="@drawable/gradient4">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_dev"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Developers"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:layout_margin="10dp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:drawablePadding="10dp"-->
+<!--                        app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
                 <LinearLayout
                     android:id="@+id/ll1"
                     android:layout_width="match_parent"
@@ -46,7 +79,7 @@
                     android:weightSum="2">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/devesh"
+                        android:id="@+id/cv_devesh"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -65,7 +98,7 @@
                             <de.hdodenhof.circleimageview.CircleImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@color/black"
+                                android:src="@drawable/user"
                                 android:layout_margin="10dp"
                                 android:layout_gravity="center_horizontal"/>
                             <TextView
@@ -101,7 +134,7 @@
                             <de.hdodenhof.circleimageview.CircleImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@color/black"
+                                android:src="@drawable/user"
                                 android:layout_margin="10dp"
                                 android:layout_gravity="center_horizontal"/>
                             <TextView
@@ -152,7 +185,7 @@
                                 android:layout_height="100dp"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_margin="10dp"
-                                android:src="@color/black" />
+                                android:src="@drawable/user" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -191,7 +224,7 @@
                                 android:layout_height="100dp"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_margin="10dp"
-                                android:src="@color/black" />
+                                android:src="@drawable/user" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -228,7 +261,7 @@
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:src="@color/black"
+                            android:src="@drawable/user"
                             android:layout_margin="10dp"
                             android:layout_gravity="center_horizontal"/>
                         <TextView
@@ -249,3 +282,4 @@
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
+</layout>
