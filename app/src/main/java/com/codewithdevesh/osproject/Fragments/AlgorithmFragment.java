@@ -12,9 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.codewithdevesh.osproject.Activity.EnterDetailsActivity;
-import com.codewithdevesh.osproject.Activity.FifoActivity;
-import com.codewithdevesh.osproject.Activity.LRU;
-import com.codewithdevesh.osproject.Activity.OptimalActivity;
 import com.codewithdevesh.osproject.R;
 import com.codewithdevesh.osproject.databinding.FragmentAlgorithmBinding;
 

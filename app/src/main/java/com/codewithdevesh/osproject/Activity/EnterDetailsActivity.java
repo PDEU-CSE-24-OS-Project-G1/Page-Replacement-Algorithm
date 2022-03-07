@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.codewithdevesh.osproject.Algorithms.Fifo;
 import com.codewithdevesh.osproject.R;
 import com.codewithdevesh.osproject.databinding.ActivityEnterDetailsBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -41,6 +42,7 @@ public class EnterDetailsActivity extends AppCompatActivity {
                 String frame = binding.inputFrames.getEditText().getText().toString();
                 String pageInputs = binding.etPageInput.getEditText().getText().toString();
                 String x;
+                int faults;
 
                 if(checkFrame(frame) || checkPage(pageInputs)){
                     Snackbar snackbar = Snackbar.make(binding.layout,"Please Enter the Details",Snackbar.LENGTH_SHORT);
@@ -148,33 +150,19 @@ public class EnterDetailsActivity extends AppCompatActivity {
                         binding.tvHitRatio.setText(String.valueOf((float)hit/ref_len));
                         binding.tvFaultRatio.setText(String.valueOf(1-(float)hit/ref_len));
                     }
-//                    else if(type.equals("fifo")){
-//                        HashSet<Integer>s = new HashSet<>(Integer.parseInt(frame));
-//                        Queue<Integer>indexes = new LinkedList<>();
-//                        int page_faults=0;
-//                        for(int i=0;i<x.length();i++){
-//                            if(s.size()<Integer.parseInt(frame)){
-//                                if(!s.contains(Integer.parseInt(String.valueOf(pageInputs.charAt(i))))){
-//                                    s.add(Integer.parseInt(String.valueOf(pageInputs.charAt(i))));
-//                                    page_faults++;
-//                                    indexes.add(Integer.valueOf(pageInputs.charAt(i)));
-//                                }
-//                            }
-//                            else{
-//                                if(!s.contains(Integer.valueOf(pageInputs.charAt(i)))){
-//                                    int val = indexes.peek();
-//                                    indexes.poll();
-//                                    s.remove(val);
-//                                    s.add(Integer.valueOf(pageInputs.charAt(i)));
-//                                    page_faults++;
-//                                }
-//                            }
-//                            binding.tvHits.setText(String.valueOf(x.length()-page_faults));
-//                            binding.tvFaults.setText(String.valueOf(page_faults));
-//                            binding.tvFaultRatio.setText(String.valueOf((float)page_faults/x.length()));
-//                            binding.tvHitRatio.setText(String.valueOf(1- (float) page_faults/x.length()));
-//                        }
-//                    }
+
+                    else if(type.equals("fifo")){
+                        int[]pages = new int[x.length()];
+                        for(int i=0;i<x.length();i++){
+                            pages[i] = Integer.parseInt(String.valueOf(x.charAt(i)));
+                        }
+                        Fifo fifo = new Fifo();
+                        faults = fifo.performFifo(pages,Integer.parseInt(frame));
+                        binding.tvFaults.setText(String.valueOf(faults));
+                        binding.tvHits.setText(String.valueOf(x.length()-faults));
+                        binding.tvHitRatio.setText(String.valueOf((float) faults/x.length()));
+                        binding.tvFaultRatio.setText(String.valueOf(1-(float) faults/x.length()));
+                    }
 
                 }
             }
@@ -229,7 +217,12 @@ public class EnterDetailsActivity extends AppCompatActivity {
             binding.inputFrames.setErrorEnabled(true);
             return true;
 
-        }else{
+        }else if(Integer.parseInt(s)<=0){
+            binding.inputFrames.setError("Enter Valid Details");
+            binding.inputFrames.setErrorEnabled(true);
+            return true;
+            }
+        else{
             binding.inputFrames.setError(null);
             binding.inputFrames.setErrorEnabled(false);
             return false;

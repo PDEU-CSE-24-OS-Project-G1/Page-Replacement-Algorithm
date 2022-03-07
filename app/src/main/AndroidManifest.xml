@@ -40,9 +40,7 @@
         <activity
             android:name=".Activity.OptimalActivity"
             android:exported="false" />
-        <activity
-            android:name=".Activity.FifoActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Activity.HomeActivity"
             android:exported="false" />
