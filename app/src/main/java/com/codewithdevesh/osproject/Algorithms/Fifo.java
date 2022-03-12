@@ -1,34 +1,41 @@
 package com.codewithdevesh.osproject.Algorithms;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class Fifo {
-    public int performFifo(int[] pages,int frames){
-        HashSet<Integer> set = new HashSet<>(frames);
-        Queue <Integer> queue = new LinkedList<>();
-        int faults=0;
+    int totalHits;
+    public int[][] performFifo(int[] pages, int frames) {
+        int[]buffer = new int[frames];
+        int[][]layout = new int[pages.length][frames];
+        int pointer=0,hit=0,fault=0;
+          for(int j=0;j<frames;j++){
+              buffer[j]=-1;
+          }
 
-        for (int page : pages) {
-            if (set.size() < frames) {
-                if (!set.contains(page)) {
-                    set.add(page);
-                    faults++;
-                    queue.add(page);
-                }
-            } else {
-                if (!set.contains(page)) {
-                    int x = queue.peek();
-                    queue.poll();
-                    set.remove(x);
-                    set.add(page);
-                    queue.add(page);
-                    faults++;
-                }
-            }
-        }
-        return faults;
+          for(int i=0;i< pages.length;i++){
+              int search=-1;
+              for(int j=0;j<frames;j++){
+                  if(buffer[j]==pages[i]){
+                      search=j;
+                      hit++;
+                      break;
+                  }
+              }
+              if(search==-1){
+                  buffer[pointer]=pages[i];
+                  fault++;
+                  pointer++;
+                  if(pointer==frames){
+                      pointer=0;
+                  }
+              }
 
+              for(int j=0;j<frames;j++){
+                  layout[i][j]=buffer[j];
+              }
+          }
+          totalHits=hit;
+          return layout;
+    }
+    public int getHits(){
+        return totalHits;
     }
 }

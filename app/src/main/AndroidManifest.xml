@@ -32,9 +32,6 @@
         <activity
             android:name=".Activity.LRU"
             android:exported="false" />
-        <activity
-            android:name=".Activity.OptimalActivity"
-            android:exported="false" />
 
         <activity
             android:name=".Activity.HomeActivity"

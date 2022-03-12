@@ -26,9 +26,9 @@ public class ProfileFragment extends Fragment {
         binding.cvDevesh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), WebViewActivity.class)
-                .putExtra("link","https://www.linkedin.com/in/devesh-parmar-875990200/")
-                .putExtra("title","Devesh Parmar's Profile"));
+                startActivity(new Intent(getActivity(), TableActivity.class));
+//                .putExtra("link","https://www.linkedin.com/in/devesh-parmar-875990200/")
+//                .putExtra("title","Devesh Parmar's Profile"));
             }
         });
         binding.cvSahil.setOnClickListener(new View.OnClickListener() {
