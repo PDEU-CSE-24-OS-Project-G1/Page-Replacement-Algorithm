@@ -2,14 +2,20 @@ package com.codewithdevesh.osproject.Algorithms;
 
 public class Fifo {
     int totalHits;
+
+    /*------------------function for getting layout for visualization---------------------*/
     public int[][] performFifo(int[] pages, int frames) {
+
+        /*-------------------initializing the arrays of layout and buffer----------------*/
         int[]buffer = new int[frames];
         int[][]layout = new int[pages.length][frames];
         int pointer=0,hit=0,fault=0;
+
           for(int j=0;j<frames;j++){
               buffer[j]=-1;
           }
 
+        /*-------------checking if pages doesn't exist then increase hit counter ----------------------*/
           for(int i=0;i< pages.length;i++){
               int search=-1;
               for(int j=0;j<frames;j++){
@@ -19,6 +25,7 @@ public class Fifo {
                       break;
                   }
               }
+              /*---------- checking if page already exist then increase fault counter----------------------------*/
               if(search==-1){
                   buffer[pointer]=pages[i];
                   fault++;
@@ -27,15 +34,21 @@ public class Fifo {
                       pointer=0;
                   }
               }
-
-              for(int j=0;j<frames;j++){
-                  layout[i][j]=buffer[j];
-              }
+              /*------------------copying elements in 2d array for visualization----------------*/
+              System.arraycopy(buffer, 0, layout[i], 0, frames);
           }
+        /*------------------------storing no of hits----------------*/
           totalHits=hit;
+
           return layout;
     }
+    /*---------------- function for getting number of hits -----------------*/
     public int getHits(){
         return totalHits;
     }
 }
+
+/* Complexity Analysis
+Time Complexity - O(f)+O(n*f)  f = no of frames, n = no of page inputs
+Space Complexity - O(f)+O(n*f)
+ */

@@ -19,8 +19,6 @@ public class Optimal {
         for(int j = 0; j < frames; j++)
             buffer[j] = -1;
 
-        /*-----------------------copying array--------------------*/
-        System.arraycopy(pages, 0, pages, 0, pages.length);
 
         /*-------------checking if pages doesn't exist then increase hit counter ----------------------*/
         for(int i = 0; i < pages.length; i++){
@@ -74,7 +72,7 @@ public class Optimal {
                     }
                 }
             }
-            /*------------------copying elements int 2d array----------------*/
+            /*------------------copying elements in 2d array for visualization----------------*/
             System.arraycopy(buffer, 0, layout[i], 0, frames);
         }
         /*------------------------storing no of hits----------------*/
@@ -90,8 +88,9 @@ public class Optimal {
 }
 
 /* complexity analysis
-Time Complexity -  O(f)+0(n)+O(n*f*n)
-Space Complexity -
+Time Complexity - O((n^2)*f)
+Space Complexity - O(n*f)+O(f)   n= no of page inputs, f = no of frames
+2d array for visualization,buffer for storing temporary values
  */
 
 

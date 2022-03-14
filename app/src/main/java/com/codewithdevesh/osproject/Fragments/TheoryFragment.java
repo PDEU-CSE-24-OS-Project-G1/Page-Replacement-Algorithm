@@ -62,6 +62,15 @@ public class TheoryFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), MoreDetailsActivity.class));
+
+            }
+        });
+        binding.cvMru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), PDFActivity.class)
+                        .putExtra("Algorithm","MRU.pdf")
+                        .putExtra("Title","MRU Algorithm"));
             }
         });
         return binding.getRoot();
