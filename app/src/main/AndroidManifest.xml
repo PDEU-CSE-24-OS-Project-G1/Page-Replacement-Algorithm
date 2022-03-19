@@ -29,9 +29,6 @@
         <activity
             android:name=".Activity.EnterDetailsActivity"
             android:exported="false" />
-        <activity
-            android:name=".Activity.LRU"
-            android:exported="false" />
 
         <activity
             android:name=".Activity.HomeActivity"

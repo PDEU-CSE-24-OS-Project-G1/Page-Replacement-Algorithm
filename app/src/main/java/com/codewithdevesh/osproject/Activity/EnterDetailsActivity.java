@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.codewithdevesh.osproject.Algorithms.Fifo;
+import com.codewithdevesh.osproject.Algorithms.LRU;
 import com.codewithdevesh.osproject.Algorithms.Optimal;
 import com.codewithdevesh.osproject.R;
 import com.codewithdevesh.osproject.databinding.ActivityEnterDetailsBinding;
@@ -90,12 +91,20 @@ public class EnterDetailsActivity extends AppCompatActivity {
                     }
                     /*-------------------------- for performing fifo algorithm----------------------------------*/
                     else if(type.equals("fifo")){
-                        Log.e("Tag", Arrays.toString(pages));
                         Fifo fifo = new Fifo();   // creating instance of fifo class
                         start = pages.length;
                         end = Integer.parseInt(frame);
                         arr = fifo.performFifo(pages,Integer.parseInt(frame));
                         hits = fifo.getHits();
+                        faults = pages.length-hits;
+                    }
+
+                    else if(type.equals("lru")){
+                        LRU lru = new LRU();
+                        start = pages.length;
+                        end = Integer.parseInt(frame);
+                        arr = lru.performLRU(pages,Integer.parseInt(frame));
+                        hits = lru.getHits();
                         faults = pages.length-hits;
                     }
                     /* printing outputs to user */
