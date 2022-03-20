@@ -85,7 +85,8 @@ public class LRU {
 }
 
 /* complexity analysis
-Time Complexity -
-Space Complexity -    n= no of page inputs, f = no of frames
+Time Complexity - O((n^2)*f)
+Space Complexity - O(n*f)+O(f)   n= no of page inputs, f = no of frames
 2d array for visualization,buffer for storing temporary values
  */
+
