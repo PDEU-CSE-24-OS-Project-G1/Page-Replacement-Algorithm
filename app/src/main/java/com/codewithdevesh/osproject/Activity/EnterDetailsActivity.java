@@ -98,16 +98,16 @@ public class EnterDetailsActivity extends AppCompatActivity {
                         hits = fifo.getHits();
                         faults = pages.length-hits;
                     }
-
+                    /*-------------------------- for performing lru algorithm----------------------------------*/
                     else if(type.equals("lru")){
-                        LRU lru = new LRU();
+                        LRU lru = new LRU();   // creating instance of LRU class
                         start = pages.length;
                         end = Integer.parseInt(frame);
                         arr = lru.performLRU(pages,Integer.parseInt(frame));
                         hits = lru.getHits();
                         faults = pages.length-hits;
                     }
-                    /* printing outputs to user */
+                    /*-------------------printing outputs to user--------------------------*/
                     binding.tvHits.setText(String.valueOf(hits));
                     binding.tvFaults.setText(String.valueOf(faults));
                     binding.tvHitRatio.setText(String.valueOf((float)hits/x.length()));
