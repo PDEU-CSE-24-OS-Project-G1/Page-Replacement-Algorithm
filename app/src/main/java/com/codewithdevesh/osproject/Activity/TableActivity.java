@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TableLayout;
@@ -15,9 +16,13 @@ import android.widget.TextView;
 import com.codewithdevesh.osproject.R;
 import com.codewithdevesh.osproject.databinding.ActivityTableBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TableActivity extends AppCompatActivity {
     private ActivityTableBinding binding;
     private TableLayout tableLayout1,tableLayout2;
+    ArrayList<Integer>list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,8 @@ public class TableActivity extends AppCompatActivity {
         int[][]arr = (int[][]) bundle.getSerializable("array");
         int start = bundle.getInt("start");
         int end = bundle.getInt("end");
+        list = bundle.getIntegerArrayList("hitList");
+        Log.e("list",list.toString());
         String input = bundle.getString("input");
         binding.temp.setText(input);
 
@@ -62,8 +69,13 @@ public class TableActivity extends AppCompatActivity {
                 tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 tv.setGravity(View.TEXT_ALIGNMENT_CENTER);
                 tv.setPadding(10,10,10,10);
-                tv.setBackgroundResource(R.color.light_background);
-                tv.setText(Integer.toString(arr[i][j]));
+                if(list.contains(i)){
+                    tv.setBackgroundResource(R.color.hit);
+                    Log.e("executed","it is executed");
+                }else {
+                    tv.setBackgroundResource(R.color.light_background);
+                }
+                tv.setText(String.valueOf(arr[i][j]));
                 row.addView(tv);
 
             }

@@ -50,6 +50,17 @@ public class AlgorithmFragment extends Fragment {
                 .putExtra("title","LRU Algorithm"));
             }
         });
+
+        binding.cvMru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),EnterDetailsActivity.class)
+                .putExtra("type","mru")
+                .putExtra("title","MRU Algorithm"));
+            }
+        });
+
         return binding.getRoot();
+
     }
 }

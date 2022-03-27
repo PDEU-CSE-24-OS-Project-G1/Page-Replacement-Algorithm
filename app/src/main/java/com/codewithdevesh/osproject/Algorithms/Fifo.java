@@ -1,8 +1,10 @@
 package com.codewithdevesh.osproject.Algorithms;
 
+import java.util.ArrayList;
+
 public class Fifo {
     int totalHits;
-
+    ArrayList<Integer> hitList = new ArrayList<>();
     /*------------------function for getting layout for visualization---------------------*/
     public int[][] performFifo(int[] pages, int frames) {
 
@@ -15,12 +17,13 @@ public class Fifo {
               buffer[j]=-1;
           }
 
-        /*-------------checking if pages doesn't exist then increase hit counter ----------------------*/
+        /*-------------checking if pages exist then increase hit counter ----------------------*/
           for(int i=0;i< pages.length;i++){
               int search=-1;
               for(int j=0;j<frames;j++){
                   if(buffer[j]==pages[i]){
                       search=j;
+                      hitList.add(i);
                       hit++;
                       break;
                   }
@@ -45,6 +48,11 @@ public class Fifo {
     /*---------------- function for getting number of hits -----------------*/
     public int getHits(){
         return totalHits;
+    }
+
+    // getting hit list to identify hits in table
+    public ArrayList<Integer> getHitList(){
+        return hitList;
     }
 }
 

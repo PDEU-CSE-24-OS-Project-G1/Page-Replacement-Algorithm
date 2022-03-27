@@ -1,8 +1,11 @@
 package com.codewithdevesh.osproject.Algorithms;
 
+import java.util.ArrayList;
+
 public class Optimal {
     int totalHits;
     final static int MAX_VAL=Integer.MAX_VALUE;
+    ArrayList<Integer>hitList = new ArrayList<>();
 
     /*------------------function for getting layout for visualization---------------------*/
     public int[][] performOptimal(int[]pages,int frames){
@@ -26,6 +29,7 @@ public class Optimal {
             for(int j = 0; j < frames; j++){
                 if(buffer[j] == pages[i]){
                     search = j;
+                    hitList.add(i);
                     hit++;
                     break;
                 }
@@ -84,6 +88,11 @@ public class Optimal {
     /*---------------- function for getting number of hits -----------------*/
     public int getHits(){
         return totalHits;
+    }
+
+    // getting hit list to identify hits in table
+    public ArrayList<Integer> getHitList(){
+        return hitList;
     }
 }
 

@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.codewithdevesh.osproject.Algorithms.Fifo;
 import com.codewithdevesh.osproject.Algorithms.LRU;
+import com.codewithdevesh.osproject.Algorithms.MRU;
 import com.codewithdevesh.osproject.Algorithms.Optimal;
 import com.codewithdevesh.osproject.R;
 import com.codewithdevesh.osproject.databinding.ActivityEnterDetailsBinding;
@@ -25,9 +26,11 @@ import java.util.Random;
 public class EnterDetailsActivity extends AppCompatActivity {
     private ActivityEnterDetailsBinding binding;
     private List<String>list;
+    private ArrayList<Integer>hitList;
     private String type;
     private String title;
     private int[][]arr;
+    private String[][]arr3;
     private int[]arr2;
     private int start;
     private int end;
@@ -107,6 +110,17 @@ public class EnterDetailsActivity extends AppCompatActivity {
                         hits = lru.getHits();
                         faults = pages.length-hits;
                     }
+                    /*-------------------------- for performing mru algorithm----------------------------------*/
+                    else if(type.equals("mru")){
+                        MRU mru = new MRU();
+                        start= pages.length;
+                        end = Integer.parseInt(frame);
+                        arr = mru.performMRU(pages,Integer.parseInt(frame));
+                        hits = mru.getHits();
+                        faults = mru.getFault();
+                        hitList = mru.getHitList();
+
+                    }
                     /*-------------------printing outputs to user--------------------------*/
                     binding.tvHits.setText(String.valueOf(hits));
                     binding.tvFaults.setText(String.valueOf(faults));
@@ -126,8 +140,8 @@ public class EnterDetailsActivity extends AppCompatActivity {
                 bundle.putSerializable("array",arr);
                 bundle.putInt("start",start);
                 bundle.putInt("end",end);
+                bundle.putIntegerArrayList("hitList",hitList);
                 bundle.putString("input",binding.etPageInput.getEditText().getText().toString());
-                bundle.putSerializable("arr2",arr2);
                 i.putExtras(bundle);
                 startActivity(i);
             }
@@ -159,7 +173,7 @@ public class EnterDetailsActivity extends AppCompatActivity {
 
                 for(int i=0;i<10;i++){
                     Random random1 = new Random();
-                    String val = String.valueOf(random.nextInt(1+9)+1);
+                    String val = String.valueOf(random.nextInt(1+8)+1);
                     list.add(val);
                 }
                 int l = Arrays.toString(list.toArray()).length();

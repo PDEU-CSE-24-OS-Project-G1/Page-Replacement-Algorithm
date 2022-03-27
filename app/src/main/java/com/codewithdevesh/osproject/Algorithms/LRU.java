@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class LRU {
     int hit;
     int fault;
-
+    ArrayList<Integer>hitList = new ArrayList<>();
     /*------------------function for getting layout for visualization---------------------*/
     public int[][] performLRU(int[]pages,int frames){
         /*-------------------This 2D array is used to represent all data in Tabular form.-------------*/
@@ -36,6 +36,7 @@ public class LRU {
                 if(buffer[j] == pages[i])
                 {
                     search = j;
+                    hitList.add(i);
                     hit++;
                     break;
                 }
@@ -81,6 +82,11 @@ public class LRU {
     /*---------------- function for getting number of hits -----------------*/
     public int getHits(){
         return hit;
+    }
+
+    // getting hit list to identify hits in table
+    public ArrayList<Integer> getHitList(){
+        return hitList;
     }
 }
 
