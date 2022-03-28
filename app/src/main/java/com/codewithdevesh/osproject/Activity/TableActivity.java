@@ -36,7 +36,6 @@ public class TableActivity extends AppCompatActivity {
         int start = bundle.getInt("start");
         int end = bundle.getInt("end");
         list = bundle.getIntegerArrayList("hitList");
-        Log.e("list",list.toString());
         String input = bundle.getString("input");
         binding.temp.setText(input);
 

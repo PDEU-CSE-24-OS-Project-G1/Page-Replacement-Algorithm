@@ -82,44 +82,51 @@ public class EnterDetailsActivity extends AppCompatActivity {
                         arr2[i] = i1;
                     }
 
-                    /*----------------------------for performing optimal algorithm-----------------------------*/
-                    if(type.equals("optimal")){
-                        Optimal optimal = new Optimal();
-                        start = pages.length;
-                        end = Integer.parseInt(frame);
-                        arr = optimal.performOptimal(pages,Integer.parseInt(frame));
-                         hits = optimal.getHits();
-                         faults = x.length()-hits;
+                    /*------------------selecting algorithm type------------*/
+                    switch (type) {
+                        /*----------------------------for performing optimal algorithm-----------------------------*/
+                        case "optimal":
+                            Optimal optimal = new Optimal(); // creating instance of optimal class
+                            start = pages.length;
+                            end = Integer.parseInt(frame);
+                            arr = optimal.performOptimal(pages, Integer.parseInt(frame));
+                            hits = optimal.getHits();
+                            faults = x.length() - hits;
+                            hitList = optimal.getHitList();
+                            break;
 
-                    }
-                    /*-------------------------- for performing fifo algorithm----------------------------------*/
-                    else if(type.equals("fifo")){
-                        Fifo fifo = new Fifo();   // creating instance of fifo class
-                        start = pages.length;
-                        end = Integer.parseInt(frame);
-                        arr = fifo.performFifo(pages,Integer.parseInt(frame));
-                        hits = fifo.getHits();
-                        faults = pages.length-hits;
-                    }
-                    /*-------------------------- for performing lru algorithm----------------------------------*/
-                    else if(type.equals("lru")){
-                        LRU lru = new LRU();   // creating instance of LRU class
-                        start = pages.length;
-                        end = Integer.parseInt(frame);
-                        arr = lru.performLRU(pages,Integer.parseInt(frame));
-                        hits = lru.getHits();
-                        faults = pages.length-hits;
-                    }
-                    /*-------------------------- for performing mru algorithm----------------------------------*/
-                    else if(type.equals("mru")){
-                        MRU mru = new MRU();
-                        start= pages.length;
-                        end = Integer.parseInt(frame);
-                        arr = mru.performMRU(pages,Integer.parseInt(frame));
-                        hits = mru.getHits();
-                        faults = mru.getFault();
-                        hitList = mru.getHitList();
+                        /*-------------------------- for performing fifo algorithm----------------------------------*/
+                        case "fifo":
+                            Fifo fifo = new Fifo();   // creating instance of fifo class
+                            start = pages.length;
+                            end = Integer.parseInt(frame);
+                            arr = fifo.performFifo(pages, Integer.parseInt(frame));
+                            hits = fifo.getHits();
+                            faults = pages.length - hits;
+                            hitList = fifo.getHitList();
+                            break;
 
+                        /*-------------------------- for performing lru algorithm----------------------------------*/
+                        case "lru":
+                            LRU lru = new LRU();   // creating instance of LRU class
+                            start = pages.length;
+                            end = Integer.parseInt(frame);
+                            arr = lru.performLRU(pages, Integer.parseInt(frame));
+                            hits = lru.getHits();
+                            faults = pages.length - hits;
+                            hitList = lru.getHitList();
+                            break;
+
+                        /*-------------------------- for performing mru algorithm----------------------------------*/
+                        case "mru":
+                            MRU mru = new MRU();  // creating instance of mru class
+                            start = pages.length;
+                            end = Integer.parseInt(frame);
+                            arr = mru.performMRU(pages, Integer.parseInt(frame));
+                            hits = mru.getHits();
+                            faults = mru.getFault();
+                            hitList = mru.getHitList();
+                            break;
                     }
                     /*-------------------printing outputs to user--------------------------*/
                     binding.tvHits.setText(String.valueOf(hits));
@@ -212,6 +219,11 @@ public class EnterDetailsActivity extends AppCompatActivity {
             binding.inputFrames.setErrorEnabled(true);
             return true;
             }
+        else if(Integer.parseInt(s)>8){
+            binding.inputFrames.setError("Enter frame between 1-8");
+            binding.inputFrames.setErrorEnabled(true);
+            return true;
+        }
         else{
             binding.inputFrames.setError(null);
             binding.inputFrames.setErrorEnabled(false);
