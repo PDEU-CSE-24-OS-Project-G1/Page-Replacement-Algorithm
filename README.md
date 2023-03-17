@@ -1,0 +1,3 @@
+# Page-Replacement-Algorithm
+
+A page replacement algorithm simulation Android app is an application that allows users to simulate the behavior of different page replacement algorithms in a virtual memory environment. Users can create custom memory configurations and test different algorithms to see how they perform under different scenarios. The app can display the status of memory at any given time, the number of page faults, and other relevant statistics. The goal of this app is to help students and professionals better understand the inner workings of operating systems and virtual memory management.
